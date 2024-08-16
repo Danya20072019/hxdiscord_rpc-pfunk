@@ -1,4 +1,4 @@
-# hxdiscord_rpc
+# hxdiscord_rpc-pfunk
 
 ![](https://img.shields.io/github/repo-size/MAJigsaw77/hxdiscord_rpc) ![](https://badgen.net/github/open-issues/MAJigsaw77/hxdiscord_rpc) ![](https://badgen.net/badge/license/MIT/green)
 
