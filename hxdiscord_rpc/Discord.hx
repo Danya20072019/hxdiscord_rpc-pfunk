@@ -15,38 +15,31 @@ import hxdiscord_rpc.Types;
 @:buildXml('<include name="${haxelib:hxdiscord_rpc}/project/Build.xml" />')
 @:include('discord_rpc.h')
 @:include('discord_register.h')
-@:unreflective
-extern class Discord
-{
+@:unreflective extern class Discord {
 	/**
 	 * No reply constant.
 	 */
-	@:native('DISCORD_REPLY_NO')
-	static var REPLY_NO:Int;
+	@:native('DISCORD_REPLY_NO') static var REPLY_NO:Int;
 
 	/**
 	 * Yes reply constant.
 	 */
-	@:native('DISCORD_REPLY_YES')
-	static var REPLY_YES:Int;
+	@:native('DISCORD_REPLY_YES') static var REPLY_YES:Int;
 
 	/**
 	 * Ignore reply constant.
 	 */
-	@:native('DISCORD_REPLY_IGNORE')
-	static var REPLY_IGNORE:Int;
+	@:native('DISCORD_REPLY_IGNORE') static var REPLY_IGNORE:Int;
 
 	/**
 	 * Private party constant.
 	 */
-	@:native('DISCORD_PARTY_PRIVATE')
-	static var PARTY_PRIVATE:Int;
+	@:native('DISCORD_PARTY_PRIVATE') static var PARTY_PRIVATE:Int;
 
 	/**
 	 * Public party constant.
 	 */
-	@:native('DISCORD_PARTY_PUBLIC')
-	static var PARTY_PUBLIC:Int;
+	@:native('DISCORD_PARTY_PUBLIC') static var PARTY_PUBLIC:Int;
 
 	/**
 	 * Initializes the Discord RPC.
@@ -56,29 +49,34 @@ extern class Discord
 	 * @param autoRegister Indicates whether to automatically register the application.
 	 * @param optionalSteamId Optional Steam ID if using Steam.
 	 */
-	@:native('Discord_Initialize')
-	static function Initialize(applicationId:cpp.ConstCharStar, handlers:cpp.RawPointer<DiscordEventHandlers>, autoRegister:Int,
-		optionalSteamId:cpp.ConstCharStar):Void;
+	@:native('Discord_Initialize') static function Initialize(applicationId:cpp.ConstCharStar, handlers:cpp.RawPointer<DiscordEventHandlers>, autoRegister:Int, optionalSteamId:cpp.ConstCharStar):Void;
 
 	/**
 	 * Shuts down the Discord RPC.
 	 */
-	@:native('Discord_Shutdown')
-	static function Shutdown():Void;
+	@:native('Discord_Shutdown') static function Shutdown():Void;
+
+	/**
+	 * Changes to debug mode.
+	 */
+	@:native('Discord_SetDebugMode') static function SetDebugMode(debug:Bool):Void;
+
+	/**
+	 * Sends your custom command.
+	 */
+	@:native('Discord_SendCustomCommand') static function SendCustomCommand(command:cpp.ConstCharStar):Void;
 
 	/**
 	 * Checks for incoming messages and dispatches callbacks.
 	 */
-	@:native('Discord_RunCallbacks')
-	static function RunCallbacks():Void;
+	@:native('Discord_RunCallbacks') static function RunCallbacks():Void;
 
 	#if DISCORD_DISABLE_IO_THREAD
 	/**
 	 * Updates the connection.
 	 * Note: This should be called if the library is configured not to start its own IO thread.
 	 */
-	@:native('Discord_UpdateConnection')
-	static function UpdateConnection():Void;
+	@:native('Discord_UpdateConnection') static function UpdateConnection():Void;
 	#end
 
 	/**
@@ -86,14 +84,12 @@ extern class Discord
 	 *
 	 * @param presence Pointer to a DiscordRichPresence struct containing the presence information.
 	 */
-	@:native('Discord_UpdatePresence')
-	static function UpdatePresence(presence:cpp.RawConstPointer<DiscordRichPresence>):Void;
+	@:native('Discord_UpdatePresence') static function UpdatePresence(presence:cpp.RawConstPointer<DiscordRichPresence>):Void;
 
 	/**
 	 * Clears the current presence.
 	 */
-	@:native('Discord_ClearPresence')
-	static function ClearPresence():Void;
+	@:native('Discord_ClearPresence') static function ClearPresence():Void;
 
 	/**
 	 * Responds to a user's request.
@@ -101,16 +97,14 @@ extern class Discord
 	 * @param userid The user ID to respond to.
 	 * @param reply The reply type (either REPLY_NO, REPLY_YES, or REPLY_IGNORE).
 	 */
-	@:native('Discord_Respond')
-	static function Respond(userid:cpp.ConstCharStar, reply:Int):Void;
+	@:native('Discord_Respond') static function Respond(userid:cpp.ConstCharStar, reply:Int):Void;
 
 	/**
 	 * Updates the event handlers.
 	 *
 	 * @param handlers Pointer to a DiscordEventHandlers struct containing event callbacks.
 	 */
-	@:native('Discord_UpdateHandlers')
-	static function UpdateHandlers(handlers:cpp.RawPointer<DiscordEventHandlers>):Void;
+	@:native('Discord_UpdateHandlers') static function UpdateHandlers(handlers:cpp.RawPointer<DiscordEventHandlers>):Void;
 
 	/**
 	 * Registers the application.
@@ -118,8 +112,7 @@ extern class Discord
 	 * @param applicationId The application ID for the Discord app.
 	 * @param command The command to register.
 	 */
-	@:native('Discord_Register')
-	static function Register(applicationId:cpp.ConstCharStar, command:cpp.ConstCharStar):Void;
+	@:native('Discord_Register') static function Register(applicationId:cpp.ConstCharStar, command:cpp.ConstCharStar):Void;
 
 	/**
 	 * Registers a Steam game.
@@ -127,6 +120,5 @@ extern class Discord
 	 * @param applicationId The application ID for the Discord app.
 	 * @param steamId The Steam ID for the game.
 	 */
-	@:native('Discord_RegisterSteamGame')
-	static function RegisterSteamGame(applicationId:cpp.ConstCharStar, steamId:cpp.ConstCharStar):Void;
+	@:native('Discord_RegisterSteamGame') static function RegisterSteamGame(applicationId:cpp.ConstCharStar, steamId:cpp.ConstCharStar):Void;
 }
