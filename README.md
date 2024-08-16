@@ -8,7 +8,7 @@ Haxe/hxcpp @:native bindings for [Discord RPC](https://github.com/discord/discor
 
 You can install it through `Git`
 ```bash
-haxelib git hxdiscord_rpc https://github.com/Danya20072019/hxdiscord_rpc.git
+haxelib git hxdiscord_rpc-pfunk https://github.com/Danya20072019/hxdiscord_rpc-pfunk.git
 ```
 
 ### Usage Example
