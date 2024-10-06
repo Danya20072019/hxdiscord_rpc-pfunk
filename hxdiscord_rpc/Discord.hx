@@ -86,7 +86,7 @@ import hxdiscord_rpc.Types;
 	 *
 	 * @param presence Pointer to a DiscordRichPresence struct containing the presence information.
 	 */
-	@:native('Discord_UpdatePresence') public static function updatePresence(presence:cpp.RawConstPointer<DiscordRichPresence>):Void;
+	@:native('Discord_UpdatePresence') public static function UpdatePresence(presence:cpp.RawConstPointer<DiscordRichPresence>):Void;
 	
 	public static inline function updatePresence(presence:DiscordRichPresence):Void {
 		var persistentPresence = presence;
@@ -110,7 +110,7 @@ import hxdiscord_rpc.Types;
 	 *
 	 * @param handlers Pointer to a DiscordEventHandlers struct containing event callbacks.
 	 */
-	@:native('Discord_UpdateHandlers') public static function updateHandlers(handlers:cpp.RawPointer<DiscordEventHandlers>):Void;
+	@:native('Discord_UpdateHandlers') public static function UpdateHandlers(handlers:cpp.RawPointer<DiscordEventHandlers>):Void;
 
 	public static inline function updateHandlers(handlers:DiscordEventHandlers) Discord.UpdateHandlers(cpp.RawPointer.addressOf(handlers));
 
