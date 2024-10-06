@@ -86,12 +86,8 @@ import hxdiscord_rpc.Types;
 	 *
 	 * @param presence Pointer to a DiscordRichPresence struct containing the presence information.
 	 */
-	@:native('Discord_UpdatePresence') public static function UpdatePresence(presence:cpp.RawConstPointer<DiscordRichPresence>):Void;
-	
-	public static inline function updatePresence(presence:DiscordRichPresence):Void {
-		var persistentPresence = presence;
-		Discord.UpdatePresence(cpp.RawConstPointer.addressOf(persistentPresence));
-	}
+	@:native('Discord_UpdatePresence') public static function updatePresence(presence:cpp.RawConstPointer<DiscordRichPresence>):Void;
+
 	/**
 	 * Clears the current presence.
 	 */
