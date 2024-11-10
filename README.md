@@ -1,4 +1,4 @@
-# hxdiscord_rpc
+# hxdiscord_rpc-pfunk
 
 ![](https://img.shields.io/github/repo-size/MAJigsaw77/hxdiscord_rpc) ![](https://badgen.net/github/open-issues/MAJigsaw77/hxdiscord_rpc) ![](https://badgen.net/badge/license/MIT/green)
 
@@ -9,13 +9,9 @@ Haxe/hxcpp @:native bindings for [Discord RPC](https://github.com/discord/discor
 
 ### Installation
 
-You can install it through `Haxelib`
+You can install it through `Git`
 ```bash
-haxelib install hxdiscord_rpc
-```
-Or through `Git`, if you want the latest updates
-```bash
-haxelib git hxdiscord_rpc https://github.com/MAJigsaw77/hxdiscord_rpc.git
+haxelib git hxdiscord_rpc-pfunk https://github.com/MAJigsaw77/hxdiscord_rpc-pfunk.git
 ```
 
 ### Usage Example
